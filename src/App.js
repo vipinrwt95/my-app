@@ -29,11 +29,16 @@ const App=()=> {
       location:'NYC'
     },
   ];
+  const addExpenseHandler=(ExpenseData)=>
+  {
+   expenses.push(ExpenseData);
+   console.log(expenses)
+  };
   
   return (
    <div>
-    <NewExpense />
-    <Expenses items={expenses} />
+    <NewExpense onAddExpense={addExpenseHandler}/>
+    <Expenses items={expenses}/>
     
     </div>
   );
